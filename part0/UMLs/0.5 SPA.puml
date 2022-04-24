@@ -1,0 +1,29 @@
+@startuml 0.5 SPA
+skinparam shadowing false
+skinparam monochrome true
+skinparam defaultFontName Courier Prime Code
+skinparam sequenceMessageAlign center
+
+title SPA sequence diagram\n
+
+Browser -> Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+
+Browser <-- Server: HTML code
+
+Browser -> Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+
+Browser <-- Server: main.css
+
+Browser -> Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+
+Browser <-- Server: spa.js
+
+note over Browser: execute spa.js\nRequest data.json
+
+Browser -> Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+
+Browser <-- Server: data.json
+
+note over Browser: Execute event handler\nDraw notes
+
+@enduml

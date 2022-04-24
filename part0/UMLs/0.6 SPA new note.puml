@@ -1,0 +1,17 @@
+@startuml 0.6 SPA new note
+skinparam shadowing false
+skinparam monochrome true
+skinparam defaultFontName Courier Prime Code
+skinparam sequenceMessageAlign center
+
+title SPA new note sequence diagram\n
+
+note over Browser: Write note\nClick Save button
+
+note over Browser: Add note to list\nRedraw notes\nSend note to server
+
+Browser -> Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+Browser <-- Server: Status code 201, response "note created"
+
+@enduml
